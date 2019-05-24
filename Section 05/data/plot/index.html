@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A simple example</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A simple example">
+  <meta name="author" content="ABCD">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>A simple example</h1>
+    <h2></h2>
+    <p>ABCD<br/>GHI</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Read-And-Delete</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Introduction</li>
+<li>how to write an equation</li>
+<li>Plot in R</li>
+<li>Conclusion</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Writting an Equations in R</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>$ CMR = \hat{ \alpha } +  \ \hat{ \beta}PGNP +  \ \hat{ \gamma }  FLR + \ \hat{ \epsilon } $</h1>
+
+<p>where : CMR = Child Mortality Rate
+PGNP = per capita GNP
+FMR = Female Literacy Rate</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">plot(cars, pch = 20, col = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Code with output</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(cars)
+</code></pre>
+
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>code without the output</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(cars)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>How to read data in slidify</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">setwd(&quot;D:/R April/R Data Visualisation/Section 05/data&quot;)
+data = read.csv(&quot;final.csv&quot; , sep = &quot;,&quot;, header = TRUE)
+head(data)
+</code></pre>
+
+<pre><code>##       Country Years     life  fert      pop
+## 1 Afghanistan  2000 54.84856 7.733 20595360
+## 2 Afghanistan  2001 55.25622 7.623 21347782
+## 3 Afghanistan  2002 55.67188 7.484 22202806
+## 4 Afghanistan  2003 56.10756 7.321 23116142
+## 5 Afghanistan  2004 56.56973 7.136 24018682
+## 6 Afghanistan  2005 57.05844 6.930 24860855
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Including a table in your slide</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">knitr::kable(data)
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left">Country</th>
+<th align="right">Years</th>
+<th align="right">life</th>
+<th align="right">fert</th>
+<th align="right">pop</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2000</td>
+<td align="right">54.84856</td>
+<td align="right">7.7330</td>
+<td align="right">20595360</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2001</td>
+<td align="right">55.25622</td>
+<td align="right">7.6230</td>
+<td align="right">21347782</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2002</td>
+<td align="right">55.67188</td>
+<td align="right">7.4840</td>
+<td align="right">22202806</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2003</td>
+<td align="right">56.10756</td>
+<td align="right">7.3210</td>
+<td align="right">23116142</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2004</td>
+<td align="right">56.56973</td>
+<td align="right">7.1360</td>
+<td align="right">24018682</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2005</td>
+<td align="right">57.05844</td>
+<td align="right">6.9300</td>
+<td align="right">24860855</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2006</td>
+<td align="right">57.57066</td>
+<td align="right">6.7020</td>
+<td align="right">25631282</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2007</td>
+<td align="right">58.09137</td>
+<td align="right">6.4560</td>
+<td align="right">26349243</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2008</td>
+<td align="right">58.60710</td>
+<td align="right">6.1960</td>
+<td align="right">27032197</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2009</td>
+<td align="right">59.11234</td>
+<td align="right">5.9280</td>
+<td align="right">27708187</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2010</td>
+<td align="right">59.60010</td>
+<td align="right">5.6590</td>
+<td align="right">28397812</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2011</td>
+<td align="right">60.06537</td>
+<td align="right">5.3950</td>
+<td align="right">29105480</td>
+</tr>
+<tr>
+<td align="left">Afghanistan</td>
+<td align="right">2012</td>
+<td align="right">60.50912</td>
+<td align="right">5.1410</td>
+<td align="right">29824536</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2000</td>
+<td align="right">79.23415</td>
+<td align="right">1.7560</td>
+<td align="right">19153000</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2001</td>
+<td align="right">79.63415</td>
+<td align="right">1.7390</td>
+<td align="right">19413000</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2002</td>
+<td align="right">79.93659</td>
+<td align="right">1.7560</td>
+<td align="right">19651400</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2003</td>
+<td align="right">80.23902</td>
+<td align="right">1.7480</td>
+<td align="right">19895400</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2004</td>
+<td align="right">80.49024</td>
+<td align="right">1.7680</td>
+<td align="right">20127400</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2005</td>
+<td align="right">80.84146</td>
+<td align="right">1.8070</td>
+<td align="right">20394800</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2006</td>
+<td align="right">81.04146</td>
+<td align="right">1.9080</td>
+<td align="right">20697900</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2007</td>
+<td align="right">81.29268</td>
+<td align="right">1.9590</td>
+<td align="right">20827600</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2008</td>
+<td align="right">81.39512</td>
+<td align="right">1.9630</td>
+<td align="right">21249200</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2009</td>
+<td align="right">81.54390</td>
+<td align="right">1.8880</td>
+<td align="right">21691700</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2010</td>
+<td align="right">81.69512</td>
+<td align="right">1.9270</td>
+<td align="right">22031800</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2011</td>
+<td align="right">81.89512</td>
+<td align="right">1.9270</td>
+<td align="right">22340000</td>
+</tr>
+<tr>
+<td align="left">Australia</td>
+<td align="right">2012</td>
+<td align="right">82.09512</td>
+<td align="right">1.9270</td>
+<td align="right">22723900</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2000</td>
+<td align="right">78.02683</td>
+<td align="right">1.3600</td>
+<td align="right">8011566</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2001</td>
+<td align="right">78.52683</td>
+<td align="right">1.3300</td>
+<td align="right">8042293</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2002</td>
+<td align="right">78.67805</td>
+<td align="right">1.3900</td>
+<td align="right">8081957</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2003</td>
+<td align="right">78.63171</td>
+<td align="right">1.3800</td>
+<td align="right">8121423</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2004</td>
+<td align="right">79.18049</td>
+<td align="right">1.4200</td>
+<td align="right">8171966</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2005</td>
+<td align="right">79.33171</td>
+<td align="right">1.4100</td>
+<td align="right">8227829</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2006</td>
+<td align="right">79.83171</td>
+<td align="right">1.4100</td>
+<td align="right">8268641</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2007</td>
+<td align="right">79.98293</td>
+<td align="right">1.3800</td>
+<td align="right">8300788</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2008</td>
+<td align="right">80.23415</td>
+<td align="right">1.4100</td>
+<td align="right">8336926</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2009</td>
+<td align="right">80.08293</td>
+<td align="right">1.3900</td>
+<td align="right">8365275</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2010</td>
+<td align="right">80.38293</td>
+<td align="right">1.4400</td>
+<td align="right">8389771</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2011</td>
+<td align="right">80.98293</td>
+<td align="right">1.4300</td>
+<td align="right">8406187</td>
+</tr>
+<tr>
+<td align="left">Austria</td>
+<td align="right">2012</td>
+<td align="right">80.93659</td>
+<td align="right">1.4400</td>
+<td align="right">8429991</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2000</td>
+<td align="right">65.31973</td>
+<td align="right">3.1200</td>
+<td align="right">132383265</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2001</td>
+<td align="right">65.79034</td>
+<td align="right">3.0110</td>
+<td align="right">134729503</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2002</td>
+<td align="right">66.23990</td>
+<td align="right">2.9050</td>
+<td align="right">137006279</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2003</td>
+<td align="right">66.67093</td>
+<td align="right">2.8020</td>
+<td align="right">139185986</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2004</td>
+<td align="right">67.08598</td>
+<td align="right">2.7020</td>
+<td align="right">141235035</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2005</td>
+<td align="right">67.48956</td>
+<td align="right">2.6070</td>
+<td align="right">143135180</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2006</td>
+<td align="right">67.88727</td>
+<td align="right">2.5200</td>
+<td align="right">144868702</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2007</td>
+<td align="right">68.28315</td>
+<td align="right">2.4430</td>
+<td align="right">146457067</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2008</td>
+<td align="right">68.68071</td>
+<td align="right">2.3770</td>
+<td align="right">147969967</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2009</td>
+<td align="right">69.08193</td>
+<td align="right">2.3220</td>
+<td align="right">149503100</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2010</td>
+<td align="right">69.48580</td>
+<td align="right">2.2770</td>
+<td align="right">151125475</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2011</td>
+<td align="right">69.89180</td>
+<td align="right">2.2400</td>
+<td align="right">152862431</td>
+</tr>
+<tr>
+<td align="left">Bangladesh</td>
+<td align="right">2012</td>
+<td align="right">70.29485</td>
+<td align="right">2.2080</td>
+<td align="right">154695368</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2000</td>
+<td align="right">79.23659</td>
+<td align="right">1.4900</td>
+<td align="right">30769700</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2001</td>
+<td align="right">79.48780</td>
+<td align="right">1.5050</td>
+<td align="right">31081900</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2002</td>
+<td align="right">79.59024</td>
+<td align="right">1.5200</td>
+<td align="right">31362000</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2003</td>
+<td align="right">79.83902</td>
+<td align="right">1.5300</td>
+<td align="right">31676000</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2004</td>
+<td align="right">80.14146</td>
+<td align="right">1.5300</td>
+<td align="right">31995000</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2005</td>
+<td align="right">80.29268</td>
+<td align="right">1.5400</td>
+<td align="right">32312000</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2006</td>
+<td align="right">80.64390</td>
+<td align="right">1.5862</td>
+<td align="right">32570505</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2007</td>
+<td align="right">80.36988</td>
+<td align="right">1.6589</td>
+<td align="right">32887928</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2008</td>
+<td align="right">80.54322</td>
+<td align="right">1.6808</td>
+<td align="right">33245773</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2009</td>
+<td align="right">80.71710</td>
+<td align="right">1.6680</td>
+<td align="right">33628571</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2010</td>
+<td align="right">80.89349</td>
+<td align="right">1.6269</td>
+<td align="right">34005274</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2011</td>
+<td align="right">81.06832</td>
+<td align="right">1.6100</td>
+<td align="right">34342780</td>
+</tr>
+<tr>
+<td align="left">Canada</td>
+<td align="right">2012</td>
+<td align="right">81.23805</td>
+<td align="right">1.6100</td>
+<td align="right">34754312</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2000</td>
+<td align="right">78.96585</td>
+<td align="right">1.2300</td>
+<td align="right">40263216</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2001</td>
+<td align="right">79.36829</td>
+<td align="right">1.2400</td>
+<td align="right">40756001</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2002</td>
+<td align="right">79.56829</td>
+<td align="right">1.2500</td>
+<td align="right">41431558</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2003</td>
+<td align="right">79.61951</td>
+<td align="right">1.3000</td>
+<td align="right">42187645</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2004</td>
+<td align="right">79.87073</td>
+<td align="right">1.3100</td>
+<td align="right">42921895</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2005</td>
+<td align="right">80.17073</td>
+<td align="right">1.3300</td>
+<td align="right">43653155</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2006</td>
+<td align="right">80.82195</td>
+<td align="right">1.3600</td>
+<td align="right">44397319</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2007</td>
+<td align="right">80.87317</td>
+<td align="right">1.3800</td>
+<td align="right">45226803</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2008</td>
+<td align="right">81.17561</td>
+<td align="right">1.4500</td>
+<td align="right">45954106</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2009</td>
+<td align="right">81.47561</td>
+<td align="right">1.3800</td>
+<td align="right">46362946</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2010</td>
+<td align="right">81.62683</td>
+<td align="right">1.3700</td>
+<td align="right">46576897</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2011</td>
+<td align="right">82.47561</td>
+<td align="right">1.3400</td>
+<td align="right">46742697</td>
+</tr>
+<tr>
+<td align="left">Spain</td>
+<td align="right">2012</td>
+<td align="right">82.37805</td>
+<td align="right">1.3200</td>
+<td align="right">46761264</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2000</td>
+<td align="right">52.24115</td>
+<td align="right">6.5290</td>
+<td align="right">66024199</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2001</td>
+<td align="right">52.94695</td>
+<td align="right">6.3800</td>
+<td align="right">67956866</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2002</td>
+<td align="right">53.73488</td>
+<td align="right">6.2180</td>
+<td align="right">69948344</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2003</td>
+<td align="right">54.60885</td>
+<td align="right">6.0460</td>
+<td align="right">71989666</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2004</td>
+<td align="right">55.56134</td>
+<td align="right">5.8700</td>
+<td align="right">74066147</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2005</td>
+<td align="right">56.57180</td>
+<td align="right">5.6930</td>
+<td align="right">76167240</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2006</td>
+<td align="right">57.61522</td>
+<td align="right">5.5200</td>
+<td align="right">78290649</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2007</td>
+<td align="right">58.65366</td>
+<td align="right">5.3530</td>
+<td align="right">80440708</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2008</td>
+<td align="right">59.65627</td>
+<td align="right">5.1930</td>
+<td align="right">82621190</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2009</td>
+<td align="right">60.60015</td>
+<td align="right">5.0430</td>
+<td align="right">84838032</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2010</td>
+<td align="right">61.46795</td>
+<td align="right">4.9020</td>
+<td align="right">87095281</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2011</td>
+<td align="right">62.25285</td>
+<td align="right">4.7690</td>
+<td align="right">89393063</td>
+</tr>
+<tr>
+<td align="left">Ethiopia</td>
+<td align="right">2012</td>
+<td align="right">62.96595</td>
+<td align="right">4.6420</td>
+<td align="right">91728849</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2000</td>
+<td align="right">56.98759</td>
+<td align="right">4.6690</td>
+<td align="right">18825034</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2001</td>
+<td align="right">57.14761</td>
+<td align="right">4.6170</td>
+<td align="right">19293392</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2002</td>
+<td align="right">57.42193</td>
+<td align="right">4.5660</td>
+<td align="right">19786307</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2003</td>
+<td align="right">57.78666</td>
+<td align="right">4.5120</td>
+<td align="right">20301686</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2004</td>
+<td align="right">58.22485</td>
+<td align="right">4.4550</td>
+<td align="right">20835514</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2005</td>
+<td align="right">58.70454</td>
+<td align="right">4.3920</td>
+<td align="right">21384034</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2006</td>
+<td align="right">59.18671</td>
+<td align="right">4.3260</td>
+<td align="right">21947779</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2007</td>
+<td align="right">59.63785</td>
+<td align="right">4.2570</td>
+<td align="right">22525659</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2008</td>
+<td align="right">60.02995</td>
+<td align="right">4.1880</td>
+<td align="right">23110139</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2009</td>
+<td align="right">60.35102</td>
+<td align="right">4.1190</td>
+<td align="right">23691533</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2010</td>
+<td align="right">60.59956</td>
+<td align="right">4.0520</td>
+<td align="right">24262901</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2011</td>
+<td align="right">60.78859</td>
+<td align="right">3.9850</td>
+<td align="right">24820706</td>
+</tr>
+<tr>
+<td align="left">Ghana</td>
+<td align="right">2012</td>
+<td align="right">60.94712</td>
+<td align="right">3.9200</td>
+<td align="right">25366462</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2000</td>
+<td align="right">62.16185</td>
+<td align="right">3.1450</td>
+<td align="right">1042261758</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2001</td>
+<td align="right">62.55663</td>
+<td align="right">3.0830</td>
+<td align="right">1059500888</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2002</td>
+<td align="right">62.94934</td>
+<td align="right">3.0180</td>
+<td align="right">1076705723</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2003</td>
+<td align="right">63.34005</td>
+<td align="right">2.9520</td>
+<td align="right">1093786762</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2004</td>
+<td align="right">63.72427</td>
+<td align="right">2.8840</td>
+<td align="right">1110626108</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2005</td>
+<td align="right">64.09759</td>
+<td align="right">2.8170</td>
+<td align="right">1127143548</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2006</td>
+<td align="right">64.45510</td>
+<td align="right">2.7530</td>
+<td align="right">1143289350</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2007</td>
+<td align="right">64.79385</td>
+<td align="right">2.6940</td>
+<td align="right">1159095250</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2008</td>
+<td align="right">65.11339</td>
+<td align="right">2.6430</td>
+<td align="right">1174662334</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2009</td>
+<td align="right">65.41320</td>
+<td align="right">2.6000</td>
+<td align="right">1190138069</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2010</td>
+<td align="right">65.69424</td>
+<td align="right">2.5630</td>
+<td align="right">1205624648</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2011</td>
+<td align="right">65.95849</td>
+<td align="right">2.5320</td>
+<td align="right">1221156319</td>
+</tr>
+<tr>
+<td align="left">India</td>
+<td align="right">2012</td>
+<td align="right">66.21085</td>
+<td align="right">2.5050</td>
+<td align="right">1236686732</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2000</td>
+<td align="right">76.63659</td>
+<td align="right">2.0560</td>
+<td align="right">282162411</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2001</td>
+<td align="right">76.73659</td>
+<td align="right">2.0305</td>
+<td align="right">284968955</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2002</td>
+<td align="right">76.83659</td>
+<td align="right">2.0205</td>
+<td align="right">287625193</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2003</td>
+<td align="right">76.98780</td>
+<td align="right">2.0475</td>
+<td align="right">290107933</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2004</td>
+<td align="right">77.33902</td>
+<td align="right">2.0515</td>
+<td align="right">292805298</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2005</td>
+<td align="right">77.33902</td>
+<td align="right">2.0570</td>
+<td align="right">295516599</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2006</td>
+<td align="right">77.58780</td>
+<td align="right">2.1080</td>
+<td align="right">298379912</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2007</td>
+<td align="right">77.83902</td>
+<td align="right">2.1200</td>
+<td align="right">301231207</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2008</td>
+<td align="right">77.93902</td>
+<td align="right">2.0720</td>
+<td align="right">304093966</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2009</td>
+<td align="right">78.09024</td>
+<td align="right">2.0020</td>
+<td align="right">306771529</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2010</td>
+<td align="right">78.54146</td>
+<td align="right">1.9310</td>
+<td align="right">309326295</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2011</td>
+<td align="right">78.64146</td>
+<td align="right">1.8945</td>
+<td align="right">311582564</td>
+</tr>
+<tr>
+<td align="left">United States</td>
+<td align="right">2012</td>
+<td align="right">78.74146</td>
+<td align="right">1.8805</td>
+<td align="right">313873685</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>embedding an image in presentation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>image: <img src="D:/R%20April/R%20Data%20Visualisation/Section%2005/google_developers_icon_128.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">library(googleVis)
+</code></pre>
+
+<pre><code>## Warning: package &#39;googleVis&#39; was built under R version 3.3.3
+</code></pre>
+
+<pre><code class="r">op &lt;- options(gvis.plot.tag=&#39;chart&#39;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">## Add the mean
+CityPopularity$Mean=mean(CityPopularity$Popularity)
+CC &lt;- gvisComboChart(CityPopularity, xvar=&#39;City&#39;,
+                     yvar=c(&#39;Mean&#39;, &#39;Popularity&#39;),
+                     options=list(seriesType=&#39;bars&#39;,
+                                  width=450, height=300,
+                                  title=&#39;City Popularity&#39;,
+                                  series=&#39;{0: {type:\&quot;line\&quot;}}&#39;))
+plot(CC)
+</code></pre>
+
+<!-- ComboChart generated in R 3.3.1 by googleVis 0.6.2 package -->
+
+<!-- Thu May 04 16:52:22 2017 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataComboChartIDc4073fc266f () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"New York",
+450,
+200
+],
+[
+"Boston",
+450,
+300
+],
+[
+"Miami",
+450,
+400
+],
+[
+"Chicago",
+450,
+500
+],
+[
+"Los Angeles",
+450,
+600
+],
+[
+"Houston",
+450,
+700
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Mean');
+data.addColumn('number','Popularity');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartComboChartIDc4073fc266f() {
+var data = gvisDataComboChartIDc4073fc266f();
+var options = {};
+options["allowHtml"] = true;
+options["seriesType"] = "bars";
+options["width"] = 450;
+options["height"] = 300;
+options["title"] = "City Popularity";
+options["series"] = {0: {type:"line"}};
+
+    var chart = new google.visualization.ComboChart(
+    document.getElementById('ComboChartIDc4073fc266f')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartComboChartIDc4073fc266f);
+})();
+function displayChartComboChartIDc4073fc266f() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartComboChartIDc4073fc266f"></script>
+ 
+
+<!-- divChart -->
+
+<div id="ComboChartIDc4073fc266f" 
+  style="width: 450; height: 300;">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Read-And-Delete'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Writting an Equations in R'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Code with output'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='code without the output'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='How to read data in slidify'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Including a table in your slide'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='embedding an image in presentation'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='NA'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='NA'>
+         11
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
